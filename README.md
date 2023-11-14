@@ -1,6 +1,10 @@
 # Netflix App
     - Create React App
     - Use Tailwind
+    - Header
+    - Signup form
+
+#Login FormS
 
 # Features to be build
 
