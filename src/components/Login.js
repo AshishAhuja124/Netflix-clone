@@ -7,6 +7,7 @@ const Login = () => {
     const [isSignInForm, setIsSignInForm] = useState(true);
     const [errorMessage, setErrorMesssage] = useState();
 
+    const name = useRef(null);
     const email = useRef(null);
     const password = useRef(null);
 
@@ -18,7 +19,7 @@ const Login = () => {
         //Validate the data first
         // console.log(email.current.value);
         // console.log(password);
-        const message = checkValidateData(email.current.value, password.current.value);
+        const message = checkValidateData(email.current.value, password.current.value, name.current.value);
         console.log(message);
         setErrorMesssage(message);
     }
@@ -41,6 +42,7 @@ const Login = () => {
 
                     {!isSignInForm && (
                         <input type="text"
+                            ref={name}
                             placeholder="Full Name"
                             className="p-4 my-4 w-full bg-gray-700">
                         </input>
