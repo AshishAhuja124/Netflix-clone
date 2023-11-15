@@ -2,7 +2,12 @@
     - Create React App
     - Use Tailwind
     - Header
+    - routing
+    - login form
     - Signup form
+    - form validation
+    - useRef hook
+
 
 #Login FormS
 
