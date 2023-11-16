@@ -10,6 +10,8 @@
     - firebase setup
     - deploy app to prod
     - create signup user account
+    - Implement sign in user api
+    - created user store with userSLice
 
 
 #Login FormS
