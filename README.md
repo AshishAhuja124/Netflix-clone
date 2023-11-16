@@ -12,6 +12,7 @@
     - create signup user account
     - Implement sign in user api
     - created user store with userSLice
+    - Update profile
 
 
 #Login FormS
