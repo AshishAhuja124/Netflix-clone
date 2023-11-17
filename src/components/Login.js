@@ -9,6 +9,8 @@ import {
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { USER_AVATAR, BG_LOGO } from "../utils/constants";
+
 
 const Login = () => {
     const [isSignInForm, setIsSignInForm] = useState(true);
@@ -36,7 +38,7 @@ const Login = () => {
                     const user = userCredential.user;
                     updateProfile(user, {
                         displayName: name.current.value,
-                        photoURL: "https://avatars.githubusercontent.com/u/31178991?v=4",
+                        photoURL: USER_AVATAR,
                     })
                         .then(() => {
                             const { uid, email, displayName, photoUrl } = auth.currentUser;
@@ -86,13 +88,13 @@ const Login = () => {
             <Header />
             <div className="absolute">
                 <img
-                    src="https://assets.nflxext.com/ffe/siteui/vlv3/fc164b4b-f085-44ee-bb7f-ec7df8539eff/d23a1608-7d90-4da1-93d6-bae2fe60a69b/IN-en-20230814-popsignuptwoweeks-perspective_alpha_website_large.jpg"
-                    alt="logo"
+                    src= {BG_LOGO}
+                    alt="bg-logo"
                 />
             </div>
             <form
                 onSubmit={(e) => e.preventDefault()}
-                className="w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80"
+                className="w-4/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80"
             >
                 <h1 className="font-bold text-3xl py-4">
                     {isSignInForm ? "Sign In" : "Sign Up"}
