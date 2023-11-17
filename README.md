@@ -13,6 +13,8 @@
     - Implement sign in user api
     - created user store with userSLice
     - Update profile
+    - Bug fix og user displayName and profile picture update
+    - bug fix : if user is not loggedIn redirect/ browse to login page
 
 
 #Login FormS
