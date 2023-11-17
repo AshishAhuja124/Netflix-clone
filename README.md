@@ -15,6 +15,7 @@
     - Update profile
     - Bug fix og user displayName and profile picture update
     - bug fix : if user is not loggedIn redirect/ browse to login page
+    - Unsubscribe to the onAuthStateChanged callback
 
 
 #Login FormS
