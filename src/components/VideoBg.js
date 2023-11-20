@@ -1,7 +1,11 @@
 import { useEffect } from "react";
 import { API_OPTIONS } from "../utils/constants";
+import {useDispatch, useSelector} from "react-redux";
+import {addTrailerVideo} from "../utils/movieSlice"
 
 const VideoBg = ({ movieId }) => {
+    const dispatch = useDispatch();
+    const trailerVideo = useSelector(store => store?.movies?.trailerVideo);
     //fetch trailer background
     const getMovieVideos = async () => {
         const data = await fetch(
@@ -13,6 +17,7 @@ const VideoBg = ({ movieId }) => {
         const filterTrailer = json.results.filter(video => video.type === 'Trailer');
         const trailer = filterTrailer.length ? filterTrailer[0] : json.results[0];
         console.log(trailer);
+        dispatch(addTrailerVideo(trailer))
     }
 
     useEffect(() => {
@@ -25,11 +30,11 @@ const VideoBg = ({ movieId }) => {
             <iframe
                 width="560"
                 height="315"
-                src={"https://www.youtube.com/embed/X4d_v-HyR4o?si=ka9KURuVP4VmZyRg"}
+                src={"https://www.youtube.com/embed/" +trailerVideo?.key}
                 title="YouTube video player"
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
+                allowFullScreen>
             </iframe>
         </div>
     )
