@@ -16,6 +16,8 @@
     - Bug fix og user displayName and profile picture update
     - bug fix : if user is not loggedIn redirect/ browse to login page
     - Unsubscribe to the onAuthStateChanged callback
+    - Register in TMDB API
+    - Fetch data from now playing movies api
 
 
 #Login FormS
