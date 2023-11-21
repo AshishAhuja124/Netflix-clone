@@ -25,6 +25,7 @@
     - fetch data for trailer video
     - update store with trailer video data
     - embed youtube video and make it autoplay and mute
+    - Build secondary component
 
 
 #Login FormS
