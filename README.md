@@ -18,6 +18,13 @@
     - Unsubscribe to the onAuthStateChanged callback
     - Register in TMDB API
     - Fetch data from now playing movies api
+    - Custom hook for now playing movies
+    - create movie slice
+    - udate store with movies data
+    - design main and secondary container
+    - fetch data for trailer video
+    - update store with trailer video data
+    - embed youtube video and make it autoplay and mute
 
 
 #Login FormS
