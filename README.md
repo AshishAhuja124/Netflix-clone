@@ -26,7 +26,10 @@
     - update store with trailer video data
     - embed youtube video and make it autoplay and mute
     - Build secondary component
-
+    - Movie list
+    - Movie card
+    - Added popular and trending movies-
+    - usePopularMovies custom hook
 
 #Login FormS
 
