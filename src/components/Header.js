@@ -2,13 +2,17 @@ import { signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { LOGO } from "../utils/constants";
 import { toggleGptSearchView } from "../utils/gptSlice";
 import { SUPPORTED_LANGUAGES } from "../utils/constants";
+import { changeLanguage } from "../utils/configSlice";
+
+
+
 
 const Header = () => {
     const navigate = useNavigate();
@@ -50,6 +54,10 @@ const Header = () => {
         dispatch(toggleGptSearchView());
     }
     
+    const langChange = useRef();
+    const handleLangChange = (e) => {
+        dispatch((changeLanguage(langChange.current.value))); // we can also use e.target.value
+    }
     return (
         <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between">
             <img
@@ -59,7 +67,10 @@ const Header = () => {
             />
             {user && (
                 <div className="flex p-2">
-                    <select className="p-2 m-2 bg-gray-700 text-white">
+                    <select className="p-2 m-2 bg-gray-700 text-white"
+                        onChange={handleLangChange}
+                        ref={langChange}
+                    >
                         {SUPPORTED_LANGUAGES.map((lang) =>
                             <option key={lang.identifier}
                                     value={lang.identifier}>{lang.name}
