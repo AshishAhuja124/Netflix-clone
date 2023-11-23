@@ -30,6 +30,7 @@
     - Movie card
     - Added popular and trending movies-
     - usePopularMovies custom hook
+    - GPT search 
 
 #Login FormS
 
