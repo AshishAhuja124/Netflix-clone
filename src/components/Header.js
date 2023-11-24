@@ -10,6 +10,7 @@ import { LOGO } from "../utils/constants";
 import { toggleGptSearchView } from "../utils/gptSlice";
 import { SUPPORTED_LANGUAGES } from "../utils/constants";
 import { changeLanguage } from "../utils/configSlice";
+import lang from "../utils/languageConstants";
 
 
 
@@ -18,7 +19,8 @@ const Header = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const user = useSelector(store => store.user);
-    const showGptSearch = useSelector(store => store.gptSearch.showGptSearch)
+    const showGptSearch = useSelector(store => store.gptSearch.showGptSearch);
+    const selectedLanguage = useSelector(store => store.config.lang); 
 
     const handleSignOut = () => {
         signOut(auth).then(() => {
@@ -70,7 +72,7 @@ const Header = () => {
             />
             {user && (
                 <div className="flex p-2">
-                    {showGptSearch &&
+                    {
                         <select className="p-2 m-2 bg-gray-700 text-white"
                             onChange={handleLangChange}
                             ref={langChange}
@@ -86,11 +88,11 @@ const Header = () => {
                     <button className="py-2 px-2 mx-4 my-2 bg-purple-700 text-white rounded-lg"
                         onClick={handleGptSearchClick}
                     >
-                        {showGptSearch ?  "Home" : "GPT Search"}
+                        {lang[selectedLanguage].gptSearch}
                     </button>
                     <img className="w-12 h-12" alt="usericon" src={user?.photoURL} />
                     <button onClick={handleSignOut} className="font-bold text-white ">
-                        (Sign Out)
+                        ({lang[selectedLanguage].signOut})
                     </button>
                 </div>
             )}
