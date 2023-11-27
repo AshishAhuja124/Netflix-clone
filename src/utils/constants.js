@@ -14,7 +14,7 @@ export const API_OPTIONS = {
 
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w400"
 
-export const OPENAI_KEY = "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"
+export const OPENAI_KEY = "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"
 
 
 export const SUPPORTED_LANGUAGES = [
