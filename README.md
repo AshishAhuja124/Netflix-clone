@@ -34,6 +34,7 @@
     - Gpt search bar
     - **Multi language feature
     - Integrate GPT Api's
+    - Use env 
 
 #Login FormS
 
