@@ -35,6 +35,8 @@
     - **Multi language feature
     - Integrate GPT Api's
     - Use env 
+    - Memoization
+    - Responsive
 
 #Login FormS
 

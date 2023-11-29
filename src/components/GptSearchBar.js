@@ -25,7 +25,6 @@ const GptSearchBar = () => {
     }
 
     const handleGptSearchClick = async () => {
-        console.log(searchText.current.value)
         //Make an api call to GPT api and get movie results
         const gptquery = "Act as a Movie recommendation system and suggest some movies for the query" +
                             searchText.current.value + 
@@ -38,7 +37,6 @@ const GptSearchBar = () => {
         if(!gptResults.choices) {
             return "Hey you dont have movies"
         }
-        console.log(gptResults.choices?.[0]?.message?.content);
         const gptMovies = gptResults.choices?.[0]?.message?.content.split(",");
 
         //for each movie i will search TMDB search api
@@ -54,8 +52,8 @@ const GptSearchBar = () => {
 
 
     return (
-        <div className="pt-[10%] flex justify-center">
-            <form className="w-1/2 grid grid-cols-12"
+        <div className="pt-[40%] md:pt-[10%] flex justify-center">
+            <form className="w-full md:w-1/2 grid grid-cols-12"
                 onSubmit={(e) => e.preventDefault()}
             >
                 <input type="text"
