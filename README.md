@@ -1,4 +1,10 @@
 # Netflix App
+
+Click below link to checkout the app
+
+https://netflix-clone-nine-neon.vercel.app/
+
+
     - Create React App
     - Use Tailwind
     - Header
